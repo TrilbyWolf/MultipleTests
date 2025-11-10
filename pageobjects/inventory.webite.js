@@ -19,8 +19,8 @@ class InventoryPage extends Website{
     }
     //Components Validation
     async openedValidation(){
-        await expect(inventoryValidationElement).toBeExisting();
-        await expect(inventoryValidationElement).toHaveText(expect.stringContaining("Products"));
+        await expect(this.inventoryValidationElement).toBeExisting();
+        await expect(this.inventoryValidationElement).toHaveText(expect.stringContaining("Products"));
     }
 }
 export default new InventoryPage(); 

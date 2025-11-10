@@ -12,7 +12,7 @@ describe('Swag Labs Login Application',()=>{
         await MyCartPage.clickMyCart();
         await MyCartPage.openedValidation();//A
         await MyCartPage.clickRemove();
-        await MyCartPage.removedValidation();//A
+        await MyCartPage.negaBadgeValidation();//A
         await MyCartPage.clickItem();
         await MyCartPage.inItemValidation();//A
         await MyCartPage.clickMyCart()

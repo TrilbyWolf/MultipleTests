@@ -48,24 +48,21 @@ class MyCartPage extends Website {
     }
     //Components Validation
     async openedValidation(){
-        await expect(myCartValidationElement).toBeExisting();
-        await expect(myCartValidationElement).toHaveText(expect.stringContaining("Your Cart"));
+        await expect(this.myCartValidationElement).toBeExisting();
+        await expect(this.myCartValidationElement).toHaveText(expect.stringContaining("Your Cart"));
     }
     async badgeValidation(){
-        await expect(badgeValidationElement).toBeExisting();
+        await expect(this.badgeValidationElement).toBeExisting();
     }
     async negaBadgeValidation(){
-        await expect(badgeValidationElement).toBeExisting();
-    }
-    async removedValidation(){
-        //await expect()
+        await expect(this.badgeValidationElement).not.toBeExisting();
     }
     async inItemValidation(){
-        await expect(itemValidationElement).toBeExisting();
+        await expect(this.itemValidationElement).toBeExisting();
     }
     async checkoutOpenedValidation(){
-        await expect(checkoutValidationElement).toBeExisting();
-        await expect(checkoutValidationElement).toHaveText(expect.stringContaining("Checkout: Your Information"));
+        await expect(this.checkoutValidationElement).toBeExisting();
+        await expect(this.checkoutValidationElement).toHaveText(expect.stringContaining("Checkout: Your Information"));
     }
 }
 export default new MyCartPage();

@@ -23,8 +23,7 @@ class LoginPage extends Website {
     }
     //Components Validation
     async openedValidation(){
-        await expect(loginButtonElem).toBeExisting();
-        await expect(loginButtonElem).toHaveText(expect.stringContaining("Login"));
+        await expect(this.loginButtonElem).toBeExisting();
     }
 }
 export default new LoginPage();

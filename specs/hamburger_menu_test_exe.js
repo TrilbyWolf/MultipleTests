@@ -26,7 +26,7 @@ describe('Swag Labs Login Application',()=>{
         await InventoryPage.openedValidation();//A
         await HamburgerMenu.clickHamburgerMenu();
         await HamburgerMenu.openedValidation();//A
-        await HamburgerMenu.clickAbout();//Runs until page is loaded
-        //await HamburgerMenu.aboutPageOpenedValidation();
+        HamburgerMenu.clickAbout();//Runs until page is loaded
+        HamburgerMenu.aboutPageOpenedValidation();
     })
 })

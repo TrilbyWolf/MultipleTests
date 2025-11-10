@@ -24,6 +24,9 @@ class HamburgerMenu extends Website {
     get hamburgerMenuValidationElement(){
         return $('div.bm-menu-wrap');
     }
+    get aboutPageValidationElement(){
+        return $('img[src="/images/logo.svg"]');
+    }
     //Component Functions
     async clickHamburgerMenu(){
         await this.hamburgerMenuButton.click();
@@ -32,7 +35,7 @@ class HamburgerMenu extends Website {
         await this.allItemsButton.click();
     }
     async clickAbout(){
-        await this.aboutButton.click();
+        this.aboutButton.click();
     }
     async clickLogout(){
         await this.logoutButton.click();
@@ -45,8 +48,11 @@ class HamburgerMenu extends Website {
     }
     //Components Validation
     async openedValidation(){
-        await expect(hamburgerMenuValidationElement).toBeExisting();
-        await expect(hamburgerMenuValidationElement).toHaveAttr('aria-hidden',expect.stringContaining("false"));
+        await expect(this.hamburgerMenuValidationElement).toBeExisting();
+        await expect(this.hamburgerMenuValidationElement).toHaveAttr('aria-hidden',expect.stringContaining("false"));
+    }
+    async aboutPageOpenedValidation(){
+       await expect(this.aboutPageValidationElement).toBeExisting();
     }
 }
 export default new HamburgerMenu();
