@@ -10,7 +10,7 @@ class MyCartPage extends Website {
         return $('button#remove-sauce-labs-backpack');
     }
     get itemButton(){
-        return $('a#item_4_link');
+        return $('a#item_0_title_link');
     }
     get continueShoppingButton(){
         return $('button#continue-shopping');
@@ -25,10 +25,10 @@ class MyCartPage extends Website {
         return $('span.shopping_cart_badge');
     }
     get itemValidationElement(){
-        return;
+        return $('div.inventory_details_name');
     }
-    get checkoutOpenedValidation(){
-        return;
+    get checkoutValidationElement(){
+        return $('span.title');
     }
     //Component Functions
     async clickMyCart(){
@@ -59,10 +59,15 @@ class MyCartPage extends Website {
     }
     async inItemValidation(){
         await expect(this.itemValidationElement).toBeExisting();
+        await expect(this.itemValidationElement).toHaveText(expect.stringContaining("Sauce Labs Bike Light"));
     }
     async checkoutOpenedValidation(){
         await expect(this.checkoutValidationElement).toBeExisting();
         await expect(this.checkoutValidationElement).toHaveText(expect.stringContaining("Checkout: Your Information"));
+    }
+    async checkCart(){
+        await this.badgeValidation();
+        await expect(this.badgeValidationElement).toHaveText(expect.stringContaining("1"));
     }
 }
 export default new MyCartPage();
