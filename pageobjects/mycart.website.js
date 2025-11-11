@@ -31,23 +31,12 @@ class MyCartPage extends Website {
         return $('span.title');
     }
     //Component Functions
-    async clickMyCart(){
-        await this.myCartButton.click();
-    }
-    async clickRemove(){
-        await this.removeButton.click();
-    }
-    async clickItem(){
-        await this.itemButton.click();
-    }
     async clickContinueShopping(){
         await this.continueShoppingButton.click();
     }
-    async clickCheckout(){
-        await this.checkoutButton.click();
-    }
     //Components Validation
     async openedValidation(){
+        await this.myCartButton.click();
         await expect(this.myCartValidationElement).toBeExisting();
         await expect(this.myCartValidationElement).toHaveText(expect.stringContaining("Your Cart"));
     }
@@ -58,14 +47,17 @@ class MyCartPage extends Website {
         await expect(this.badgeValidationElement).not.toBeExisting();
     }
     async inItemValidation(){
+        await this.itemButton.click();
         await expect(this.itemValidationElement).toBeExisting();
         await expect(this.itemValidationElement).toHaveText(expect.stringContaining("Sauce Labs Bike Light"));
     }
     async checkoutOpenedValidation(){
+        await this.checkoutButton.click();
         await expect(this.checkoutValidationElement).toBeExisting();
         await expect(this.checkoutValidationElement).toHaveText(expect.stringContaining("Checkout: Your Information"));
     }
     async checkCart(){
+        await this.removeButton.click();
         await this.badgeValidation();
         await expect(this.badgeValidationElement).toHaveText(expect.stringContaining("1"));
     }

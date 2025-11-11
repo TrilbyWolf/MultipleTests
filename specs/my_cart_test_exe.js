@@ -9,19 +9,13 @@ describe('Swag Labs Login Application',()=>{
         await InventoryPage.openedValidation()//Postive Test
         await InventoryPage.addToCart();
         await MyCartPage.badgeValidation();//Postive Test
-        await MyCartPage.clickMyCart();
         await MyCartPage.openedValidation();//Postive Test
-        await MyCartPage.clickRemove();
         await MyCartPage.checkCart();//Postive Test
-        await MyCartPage.clickItem();
         await MyCartPage.inItemValidation();//Postive Test
-        await MyCartPage.clickMyCart()
         await MyCartPage.openedValidation();//Postive Test
         await MyCartPage.clickContinueShopping();
         await InventoryPage.openedValidation();//Postive Test
-        await MyCartPage.clickMyCart();
         await MyCartPage.openedValidation();//Postive Test
-        await MyCartPage.clickCheckout();
         await MyCartPage.checkoutOpenedValidation();//Postive Test
     })
 })
