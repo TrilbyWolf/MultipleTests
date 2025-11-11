@@ -10,7 +10,6 @@ describe('Swag Labs Login Application',()=>{
         await InventoryPage.openedValidation()//Postive Test
         await InventoryPage.addToCart();
         await MyCartPage.badgeValidation();//Postive Test
-        await MyCartPage.clickMyCart();
         await MyCartPage.openedValidation();//Postive Test
         await HamburgerMenu.clickHamburgerMenu();
         await HamburgerMenu.openedValidation();//Postive Test
